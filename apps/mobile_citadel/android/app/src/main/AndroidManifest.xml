@@ -1,0 +1,313 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_BLOCKED_NUMBERS" />
+    <uses-permission android:name="android.permission.WRITE_BLOCKED_NUMBERS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" /> <!-- ADDED: Requirement for Voice/Call -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" /> <!-- REQUIRED FOR ANDROID 14 VIDEO CALLS -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" /> <!-- V19 History -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> <!-- Android 13+ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Android 14+ Critical -->
+    <application
+        android:label="Neural Citadel"
+        android:name="${applicationName}"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/launcher_icon">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            
+            <!-- CRITICAL: Dialer Recognition Filters -->
+            
+            <!-- Handle Missed Call Notification Clicks (Call Log History) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/calls" />
+            </intent-filter>
+
+            <!-- Default Dialer Missed Call Handling Broadcast -->
+            <intent-filter>
+                <action android:name="android.telecom.action.SHOW_MISSED_CALLS_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_BUTTON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+        <!-- Disable Impeller to prevent GraphicBufferAllocator crashes on some devices -->
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
+        
+        <!-- Background Service for Voice -->
+        <service
+            android:name="id.flutter.flutter_background_service.BackgroundService"
+            android:foregroundServiceType="microphone"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:enabled="true"
+            android:exported="true"
+        />
+        
+        <!-- Overlay Service for Dynamic Island -->
+        <service 
+            android:name="flutter.overlay.window.flutter_overlay_window.OverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property 
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Voice assistant overlay"/>
+        </service>
+
+        <service android:name=".CallService"
+            android:permission="android.permission.BIND_INCALL_SERVICE"
+            android:foregroundServiceType="phoneCall|microphone|camera"
+            android:exported="true">
+            <meta-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true" />
+            <intent-filter>
+                <action android:name="android.telecom.InCallService"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".NotificationActionReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="ANSWER_CALL" />
+                <action android:name="END_CALL" />
+                <action android:name="TOGGLE_SPEAKER" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Required for url_launcher on Android 11+ -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:scheme="tel" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="tel" />
+        </intent>
+        <!-- EXTERNAL APP LAUNCHER: WHITELIST (V17 MASSIVE UPDATE) -->
+        
+        <!-- Google Suite -->
+        <package android:name="com.google.android.youtube" />
+        <package android:name="com.google.android.gm" /> 
+        <package android:name="com.android.chrome" />
+        <package android:name="com.google.android.apps.photos" />
+        <package android:name="com.google.android.googlequicksearchbox" />
+        <package android:name="com.google.android.apps.maps" />
+        <package android:name="com.google.android.apps.docs" />
+        <package android:name="com.google.android.apps.docs.editors.docs" />
+        <package android:name="com.google.android.apps.nbu.files" />
+        <package android:name="com.google.android.calculator" />
+        <package android:name="com.google.android.deskclock" />
+        <package android:name="com.google.android.apps.bard" /> <!-- Gemini -->
+        <package android:name="com.google.android.apps.recorder" />
+
+        <!-- Social & Communication -->
+        <package android:name="com.whatsapp" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.discord" />
+        <package android:name="com.linkedin.android" />
+        
+        <!-- Entertainment -->
+        <package android:name="com.spotify.music" />
+        <package android:name="com.pubg.imobile" /> <!-- BGMI -->
+        
+        <!-- Payments & Finance -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" /> <!-- GPay -->
+        <package android:name="net.one97.paytm" />
+        <package android:name="com.phonepe.app" />
+        <package android:name="in.org.npci.upiapp" /> <!-- BHIM -->
+        <package android:name="com.navi.money" />
+        
+        <!-- Shopping & Info -->
+        <package android:name="in.amazon.mShop.android.shopping" />
+        <package android:name="com.flipkart.android" />
+        <package android:name="com.myntra.android" />
+        <package android:name="com.meesho.supply" />
+        <package android:name="com.cashkaro" />
+        <package android:name="com.whereismytrain.android" />
+        <package android:name="com.rapido.passenger" />
+        
+        <!-- Dev & Utils -->
+        <package android:name="com.github.android" />
+        <package android:name="com.openai.chatgpt" />
+        <package android:name="ru.iiec.pydroid3" />
+        <package android:name="com.upwork.android.apps.client" />
+        <package android:name="com.jio.myjio" />
+        <package android:name="com.android.settings" />
+        
+        <!-- V18 EXPANSION: TRAVEL -->
+        <package android:name="com.ubercab" />
+        <package android:name="com.olacabs.customer" />
+        <package android:name="cris.org.in.prs.ima" />
+        <package android:name="com.makemytrip" />
+        <package android:name="com.goibibo" />
+        <package android:name="net.skyscanner.android.main" />
+        <package android:name="com.google.earth" />
+        
+        <!-- V18 EXPANSION: FOOD -->
+        <package android:name="com.application.zomato" />
+        <package android:name="in.swiggy.android" />
+        <package android:name="com.grofers.customerapp" />
+        <package android:name="com.zeptonow.customer" />
+        <package android:name="com.bigbasket.mobileapp" />
+        <package android:name="com.dominospizza" />
+        
+        <!-- V18 EXPANSION: OTT -->
+        <package android:name="com.netflix.mediaclient" />
+        <package android:name="com.amazon.avod.thirdpartyclient" />
+        <package android:name="in.startv.hotstar" />
+        <package android:name="com.jio.media.ondemand" />
+        <package android:name="com.graymatrix.did" />
+        <package android:name="com.sonyliv" />
+        <package android:name="com.hulu.plus" />
+        <package android:name="tv.twitch.android.app" />
+        
+        <!-- V18 EXPANSION: MUSIC & AUDIO -->
+        <package android:name="com.jio.media.jiobeats" />
+        <package android:name="com.gaana" />
+        <package android:name="com.bsbportal.music" />
+        <package android:name="com.apple.android.music" />
+        <package android:name="com.google.android.apps.youtube.music" />
+        <package android:name="com.soundcloud.android" />
+        <package android:name="com.shazam.android" />
+        <package android:name="com.audible.application" />
+        <package android:name="com.android.fmradio" />
+        
+        <!-- V18 EXPANSION: SOCIAL EXT -->
+        <package android:name="com.twitter.android" />
+        <package android:name="com.snapchat.android" />
+        <package android:name="com.zhiliaoapp.musically" />
+        <package android:name="com.pinterest" />
+        <package android:name="com.reddit.frontpage" />
+        <package android:name="org.thoughtcrime.securesms" />
+        <package android:name="com.clubhouse.app" />
+        
+        <!-- V18 EXPANSION: WORK -->
+        <package android:name="us.zoom.videomeetings" />
+        <package android:name="com.microsoft.teams" />
+        <package android:name="com.google.android.apps.meetings" />
+        <package android:name="com.Slack" />
+        <package android:name="com.microsoft.office.outlook" />
+        <package android:name="com.microsoft.office.officehub" />
+        <package android:name="com.microsoft.office.word" />
+        <package android:name="com.microsoft.office.excel" />
+        <package android:name="com.microsoft.office.powerpoint" />
+        <package android:name="notion.id" />
+        <package android:name="com.evernote" />
+        <package android:name="com.trello" />
+        <package android:name="com.adobe.reader" />
+        <package android:name="com.google.android.calendar" />
+        <package android:name="com.google.android.keep" />
+        
+        <!-- V18 EXPANSION: FINANCE EXT -->
+        <package android:name="com.paypal.android.p2pmobile" />
+        <package android:name="com.dreamplug.androidapp" />
+        <package android:name="com.nextbillion.groww" />
+        <package android:name="com.zerodha.kite3" />
+        <package android:name="com.indwealth" />
+        <package android:name="com.msf.angelmobile" />
+        
+        <!-- V18 EXPANSION: TOOLS -->
+        <package android:name="com.truecaller" />
+        <package android:name="org.zwanoo.android.speedtest" />
+        <package android:name="com.google.android.apps.translate" />
+        <package android:name="com.lenovo.anyshare.gps" />
+        <package android:name="ru.zdevs.zarchiver" />
+        <package android:name="com.mxtech.videoplayer.ad" />
+        <package android:name="org.videolan.vlc" />
+        <package android:name="com.google.ar.lens" />
+        
+        <!-- V18 EXPANSION: NEWS -->
+        <package android:name="com.google.android.apps.magazines" />
+        <package android:name="com.nis.app" />
+        <package android:name="com.eterno" />
+        <package android:name="org.wikipedia" />
+        <package android:name="com.google.android.apps.weather" />
+        <package android:name="com.neuralcitadel.mobile" /> <!-- Self -->
+    </queries>
+</manifest>

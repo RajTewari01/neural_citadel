@@ -1,0 +1,87 @@
+{
+    "_comment": "TikTok API credentials - FULL PERMISSIONS",
+    "api_version": "1.0",
+    
+    "session": {
+        "_description": "Browser session cookies (extracted from browser)",
+        "ms_token": "",
+        "session_id": "",
+        "s_v_web_id": "",
+        "tt_csrf_token": "",
+        "tt_chain_token": ""
+    },
+    
+    "device_info": {
+        "_description": "Device fingerprint for API requests",
+        "device_id": "",
+        "device_type": "desktop",
+        "os": "windows",
+        "browser_name": "chrome",
+        "browser_version": "121.0.0.0",
+        "screen_width": 1920,
+        "screen_height": 1080,
+        "timezone": "America/New_York"
+    },
+    
+    "user_info": {
+        "user_id": "",
+        "sec_uid": "",
+        "unique_id": "",
+        "nickname": "",
+        "follower_count": 0,
+        "following_count": 0
+    },
+    
+    "permissions": {
+        "view_profile": true,
+        "view_videos": true,
+        "view_comments": true,
+        "view_followers": true,
+        "view_following": true,
+        "view_trending": true,
+        "view_hashtags": true,
+        "view_sounds": true,
+        "upload_video": true,
+        "delete_video": true,
+        "edit_video": true,
+        "like_video": true,
+        "comment_video": true,
+        "share_video": true,
+        "follow_user": true,
+        "unfollow_user": true,
+        "block_user": true,
+        "send_dm": true,
+        "go_live": true,
+        "duet": true,
+        "stitch": true,
+        "download_videos": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "uploads_per_day": -1,
+        "likes_per_hour": -1,
+        "comments_per_hour": -1,
+        "follows_per_hour": -1,
+        "dms_per_day": -1,
+        "delay_between_actions_ms": 0
+    },
+    
+    "proxy": {
+        "_description": "Optional proxy for requests",
+        "enabled": false,
+        "http": "",
+        "https": ""
+    },
+    
+    "playwright": {
+        "_description": "Browser automation settings",
+        "headless": true,
+        "browser": "chromium",
+        "timeout_ms": 30000
+    },
+    
+    "last_login": null
+}

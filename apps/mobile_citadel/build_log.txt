@@ -1,0 +1,100 @@
+Launching lib\main.dart on I2304 in debug mode...
+Running Gradle task 'assembleDebug'...                          
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 597
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5972
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 598
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5973
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 599
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5974
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 600
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5975
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 601
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5976
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 602
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5977
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 603
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5978
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 382
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 604
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5979
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 383
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 605
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5980
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 384
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 606
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5981
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 385
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 607
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5982
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 386
+I/flutter ( 8383): [IMPORTANT:flutter/shell/common/shell.cc(527)] [Action Required]: Impeller opt-out deprecated.
+I/flutter ( 8383):     The application opted out of Impeller by either using the
+I/flutter ( 8383):     `--no-enable-impeller` flag or the
+I/flutter ( 8383):     `io.flutter.embedding.android.EnableImpeller` `AndroidManifest.xml` entry.
+I/flutter ( 8383):     These options are going to go away in an upcoming Flutter release. Remove
+I/flutter ( 8383):     the explicit opt-out. If you need to opt-out, please report a bug describing
+I/flutter ( 8383):     the issue.
+I/flutter ( 8383): 
+I/flutter ( 8383):     https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 608
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5983
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 387
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 609
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5984
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 388
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 610
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5985
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 389
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 611
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5986
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 390
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 612
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5987
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 391
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 613
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5988
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 392
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 614
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5989
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 393
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 615
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5990
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 394
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 616
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5991
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 395
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 617
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 5992
+W/FlutterJNI( 8383): Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: dev.fluttercommunity.plus/charging. Response ID: 396
+ERROR: D:\neural_citadel\apps\mobile_citadel\build\sqflite_android\.transforms\e6fb841d3d9b785d1b350260f959e23c\transformed\bundleLibRuntimeToDirDebug\bundleLibRuntimeToDirDebug_dex\com\tekartik\sqflite\Database$1.dex: D8: java.nio.file.NoSuchFileException: D:\neural_citadel\apps\mobile_citadel\build\sqflite_android\.transforms\e6fb841d3d9b785d1b350260f959e23c\transformed\bundleLibRuntimeToDirDebug\bundleLibRuntimeToDirDebug_dex\com
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:mergeLibDexDebug'.
+> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+   > Failed to transform bundleLibRuntimeToDirDebug (project :google_sign_in_android) to match attributes {artifactType=android-dex, com.android.build.api.attributes.AgpVersionAttr=8.9.1, com.android.build.api.attributes.BuildTypeAttr=debug, com.android.build.gradle.internal.attributes.VariantAttr=debug, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.libraryelements=classes, org.gradle.usage=java-runtime}.
+      > Cannot snapshot output property 'outputDirectory'.
+   > Failed to transform bundleLibRuntimeToDirDebug (project :sqflite_android) to match attributes {artifactType=android-dex, com.android.build.api.attributes.AgpVersionAttr=8.9.1, com.android.build.api.attributes.BuildTypeAttr=debug, com.android.build.gradle.internal.attributes.VariantAttr=debug, dexing-component-attributes=ComponentSpecificParameters(minSdkVersion=24, debuggable=true, enableCoreLibraryDesugaring=false, enableGlobalSynthetics=true, enableApiModeling=false, dependenciesClassesAreInstrumented=false, asmTransformComponent=null, useJacocoTransformInstrumentation=false, enableDesugaring=true, needsClasspath=false, useFullClasspath=false, componentIfUsingFullClasspath=null), org.gradle.libraryelements=classes, org.gradle.usage=java-runtime}.
+      > Execution failed for DexingNoClasspathTransform: D:\neural_citadel\apps\mobile_citadel\build\sqflite_android\intermediates\runtime_library_classes_dir\debug\bundleLibRuntimeToDirDebug.
+         > Error while dexing.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 11m 24s
+Running Gradle task 'assembleDebug'...                            688.8s
+Error: Gradle task assembleDebug failed with exit code 1

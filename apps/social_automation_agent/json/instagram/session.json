@@ -1,0 +1,76 @@
+{
+    "_comment": "Instagram session for instagrapi - FULL PERMISSIONS",
+    "uuids": {
+        "phone_id": "",
+        "uuid": "",
+        "client_session_id": "",
+        "advertising_id": "",
+        "android_device_id": "",
+        "request_id": "",
+        "tray_session_id": ""
+    },
+    "mid": "",
+    "ig_u_rur": null,
+    "ig_www_claim": null,
+    "authorization_data": {
+        "ds_user_id": "",
+        "sessionid": ""
+    },
+    "cookies": {},
+    "last_login": null,
+    "device_settings": {
+        "app_version": "269.0.0.18.75",
+        "android_version": 26,
+        "android_release": "8.0.0",
+        "dpi": "480dpi",
+        "resolution": "1080x1920",
+        "manufacturer": "OnePlus",
+        "device": "devitron",
+        "model": "6T Dev",
+        "cpu": "qcom",
+        "version_code": "314665256"
+    },
+    "user_agent": "Instagram 269.0.0.18.75 Android (26/8.0.0; 480dpi; 1080x1920; OnePlus; 6T Dev; devitron; qcom; en_US; 314665256)",
+    "country": "US",
+    "country_code": 1,
+    "locale": "en_US",
+    "timezone_offset": -14400,
+    
+    "permissions": {
+        "post_photo": true,
+        "post_video": true,
+        "post_story": true,
+        "post_reel": true,
+        "post_carousel": true,
+        "send_dm": true,
+        "like": true,
+        "comment": true,
+        "follow": true,
+        "unfollow": true,
+        "block": true,
+        "mute": true,
+        "archive": true,
+        "delete": true,
+        "edit": true,
+        "share": true,
+        "save": true,
+        "download": true,
+        "live_broadcast": true,
+        "igtv_upload": true,
+        "insights_access": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "posts_per_day": -1,
+        "stories_per_day": -1,
+        "reels_per_day": -1,
+        "likes_per_hour": -1,
+        "comments_per_hour": -1,
+        "follows_per_hour": -1,
+        "dms_per_day": -1,
+        "delay_between_actions_ms": 0
+    }
+}

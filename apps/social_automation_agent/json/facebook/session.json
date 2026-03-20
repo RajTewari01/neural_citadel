@@ -1,0 +1,73 @@
+{
+    "_comment": "Facebook/Meta API credentials - FULL PERMISSIONS",
+    "api_version": "v18.0",
+    
+    "app_credentials": {
+        "_description": "From developers.facebook.com",
+        "app_id": "",
+        "app_secret": ""
+    },
+    
+    "user_token": {
+        "_description": "User access token",
+        "access_token": "",
+        "token_type": "bearer",
+        "expires_in": null,
+        "issued_at": null
+    },
+    
+    "page_tokens": {
+        "_description": "Page access tokens (never expire if long-lived)",
+        "pages": []
+    },
+    
+    "user_info": {
+        "user_id": "",
+        "name": "",
+        "email": ""
+    },
+    
+    "permissions": {
+        "public_profile": true,
+        "email": true,
+        "user_friends": true,
+        "user_posts": true,
+        "user_photos": true,
+        "user_videos": true,
+        "user_events": true,
+        "user_likes": true,
+        "user_location": true,
+        "user_link": true,
+        "pages_show_list": true,
+        "pages_read_engagement": true,
+        "pages_read_user_content": true,
+        "pages_manage_posts": true,
+        "pages_manage_cta": true,
+        "pages_manage_instant_articles": true,
+        "pages_manage_engagement": true,
+        "pages_manage_metadata": true,
+        "pages_messaging": true,
+        "publish_to_groups": true,
+        "groups_access_member_info": true,
+        "business_management": true,
+        "ads_management": true,
+        "ads_read": true,
+        "instagram_basic": true,
+        "instagram_content_publish": true,
+        "instagram_manage_comments": true,
+        "instagram_manage_insights": true,
+        "instagram_manage_messages": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "calls_per_hour": -1,
+        "posts_per_day": -1,
+        "page_posts_per_day": -1,
+        "delay_between_actions_ms": 0
+    },
+    
+    "last_login": null
+}

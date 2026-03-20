@@ -1,0 +1,66 @@
+{
+    "_comment": "Twitter/X API credentials - FULL PERMISSIONS",
+    "api_version": "2.0",
+    "auth_type": "oauth2",
+    
+    "oauth1": {
+        "_description": "For API v1.1 (posting tweets, media upload)",
+        "consumer_key": "",
+        "consumer_secret": "",
+        "access_token": "",
+        "access_token_secret": ""
+    },
+    
+    "oauth2": {
+        "_description": "For API v2 (reading, searching)",
+        "bearer_token": "",
+        "client_id": "",
+        "client_secret": ""
+    },
+    
+    "user_info": {
+        "user_id": "",
+        "username": "",
+        "display_name": ""
+    },
+    
+    "permissions": {
+        "tweet_read": true,
+        "tweet_write": true,
+        "tweet_moderate_write": true,
+        "users_read": true,
+        "follows_read": true,
+        "follows_write": true,
+        "offline_access": true,
+        "space_read": true,
+        "mute_read": true,
+        "mute_write": true,
+        "like_read": true,
+        "like_write": true,
+        "list_read": true,
+        "list_write": true,
+        "block_read": true,
+        "block_write": true,
+        "bookmark_read": true,
+        "bookmark_write": true,
+        "dm_read": true,
+        "dm_write": true,
+        "media_upload": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "tweets_per_day": -1,
+        "tweets_per_15min": -1,
+        "dms_per_day": -1,
+        "follows_per_day": -1,
+        "likes_per_day": -1,
+        "retweets_per_day": -1,
+        "delay_between_actions_ms": 0
+    },
+    
+    "last_login": null,
+    "session_expires": null
+}

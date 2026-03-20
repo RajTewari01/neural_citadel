@@ -1,0 +1,7 @@
+# PyQt6 UI Dependencies
+PyQt6>=6.6.0
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+GPUtil>=1.4.0
+psutil>=5.9.0
+numpy>=1.24.0

@@ -1,0 +1,75 @@
+{
+    "_comment": "Reddit API credentials - FULL PERMISSIONS",
+    "api_version": "1.0",
+    
+    "app_credentials": {
+        "_description": "From reddit.com/prefs/apps",
+        "client_id": "",
+        "client_secret": "",
+        "user_agent": "NuralUx_Bot/1.0 by u/YOUR_USERNAME"
+    },
+    
+    "user_credentials": {
+        "_description": "Your Reddit account (for posting)",
+        "username": "",
+        "password": ""
+    },
+    
+    "refresh_token": {
+        "_description": "OAuth2 refresh token",
+        "token": ""
+    },
+    
+    "user_info": {
+        "user_id": "",
+        "username": "",
+        "karma": {
+            "link": 0,
+            "comment": 0
+        },
+        "is_gold": false,
+        "is_mod": false,
+        "created_utc": null
+    },
+    
+    "subreddits": {
+        "_description": "Subreddits to post to",
+        "allowed": [],
+        "banned": [],
+        "moderated": []
+    },
+    
+    "permissions": {
+        "identity": true,
+        "edit": true,
+        "flair": true,
+        "history": true,
+        "modconfig": true,
+        "modflair": true,
+        "modlog": true,
+        "modposts": true,
+        "modwiki": true,
+        "mysubreddits": true,
+        "privatemessages": true,
+        "read": true,
+        "report": true,
+        "save": true,
+        "submit": true,
+        "subscribe": true,
+        "vote": true,
+        "wikiedit": true,
+        "wikiread": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "posts_per_10min": -1,
+        "comments_per_10min": -1,
+        "api_calls_per_min": -1,
+        "delay_between_actions_ms": 0
+    },
+    
+    "last_login": null
+}

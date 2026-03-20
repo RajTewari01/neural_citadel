@@ -1,0 +1,117 @@
+{
+    "_comment": "Discord Bot credentials - FULL PERMISSIONS",
+    "api_version": "10",
+    
+    "bot_credentials": {
+        "_description": "From discord.com/developers/applications",
+        "bot_token": "",
+        "application_id": "",
+        "public_key": ""
+    },
+    
+    "oauth2": {
+        "_description": "For user OAuth2 flows",
+        "client_id": "",
+        "client_secret": "",
+        "redirect_uri": "http://localhost:8080/callback"
+    },
+    
+    "bot_info": {
+        "bot_id": "",
+        "username": "",
+        "discriminator": "",
+        "avatar_url": ""
+    },
+    
+    "guilds": {
+        "_description": "Servers the bot is in",
+        "server_ids": [],
+        "channel_mappings": {}
+    },
+    
+    "intents": {
+        "_description": "ALL INTENTS ENABLED",
+        "guilds": true,
+        "guild_members": true,
+        "guild_moderation": true,
+        "guild_emojis_and_stickers": true,
+        "guild_integrations": true,
+        "guild_webhooks": true,
+        "guild_invites": true,
+        "guild_voice_states": true,
+        "guild_presences": true,
+        "guild_messages": true,
+        "guild_message_reactions": true,
+        "guild_message_typing": true,
+        "direct_messages": true,
+        "direct_message_reactions": true,
+        "direct_message_typing": true,
+        "message_content": true,
+        "guild_scheduled_events": true,
+        "auto_moderation_configuration": true,
+        "auto_moderation_execution": true
+    },
+    
+    "permissions": {
+        "_description": "Bot Permission Integer (ALL = 8 for Admin)",
+        "permission_integer": 8,
+        "create_instant_invite": true,
+        "kick_members": true,
+        "ban_members": true,
+        "administrator": true,
+        "manage_channels": true,
+        "manage_guild": true,
+        "add_reactions": true,
+        "view_audit_log": true,
+        "priority_speaker": true,
+        "stream": true,
+        "view_channel": true,
+        "send_messages": true,
+        "send_tts_messages": true,
+        "manage_messages": true,
+        "embed_links": true,
+        "attach_files": true,
+        "read_message_history": true,
+        "mention_everyone": true,
+        "use_external_emojis": true,
+        "view_guild_insights": true,
+        "connect": true,
+        "speak": true,
+        "mute_members": true,
+        "deafen_members": true,
+        "move_members": true,
+        "use_vad": true,
+        "change_nickname": true,
+        "manage_nicknames": true,
+        "manage_roles": true,
+        "manage_webhooks": true,
+        "manage_emojis_and_stickers": true,
+        "use_application_commands": true,
+        "request_to_speak": true,
+        "manage_events": true,
+        "manage_threads": true,
+        "create_public_threads": true,
+        "create_private_threads": true,
+        "use_external_stickers": true,
+        "send_messages_in_threads": true,
+        "use_embedded_activities": true,
+        "moderate_members": true,
+        "batch_operations": true
+    },
+    
+    "rate_limits": {
+        "_comment": "Set to -1 for unlimited",
+        "enabled": false,
+        "messages_per_second": -1,
+        "bulk_delete_limit": -1,
+        "dm_per_day": -1,
+        "delay_between_actions_ms": 0
+    },
+    
+    "webhooks": {
+        "_description": "Webhook URLs for posting without bot",
+        "channels": {}
+    },
+    
+    "last_login": null
+}

@@ -1,0 +1,157 @@
+# ============================================================================
+# NEURAL CITADEL - .gitignore
+# Protects: models, user data, secrets, downloads, generated content, venvs
+# ============================================================================
+
+# ============================================================================
+# 1. VIRTUAL ENVIRONMENTS (ALL of them)
+# ============================================================================
+venvs/
+.venv/
+env/
+venv/
+
+# ============================================================================
+# 2. ASSETS — Exclude everything EXCEPT exe/ and apps_assets/
+# ============================================================================
+
+# AI Model Weights (huge files, 500MB-10GB each)
+assets/models/
+
+# Downloaded content (movies, torrents, youtube)
+assets/downloaded/
+
+# Generated output (images, newspapers, QR codes)
+assets/generated/
+
+# Scraped prompts (CivitAI data)
+assets/prompts/
+
+# Databases
+assets/db/
+*.db
+
+# QR code outputs
+assets/qr_code/
+
+# Temp files
+assets/temp/
+
+# Gallery (personal generated images)
+assets/gallery/
+
+# General output directory
+assets/outputs/
+
+# ============================================================================
+# 3. APPS ASSETS — Allow apps_assets/ BUT exclude user_history
+# ============================================================================
+assets/apps_assets/user_history/
+
+# ============================================================================
+# 4. SECRETS & API KEYS
+# ============================================================================
+configs/secrets/
+!configs/secrets/socials.env.example
+*.env
+*.env.local
+.env
+.env.*
+!*.env.example
+
+# ============================================================================
+# 5. IMPLEMENTATION PLAN (private project roadmap)
+# ============================================================================
+implementation_plan.md
+
+# ============================================================================
+# 6. PYTHON
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+.eggs/
+
+# ============================================================================
+# 7. LOGS
+# ============================================================================
+logs/
+*.log
+
+# ============================================================================
+# 8. IDE & OS
+# ============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+._*
+
+# ============================================================================
+# 9. MISC
+# ============================================================================
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# PyInstaller
+*.spec
+
+# Coverage/testing
+htmlcov/
+.coverage
+.pytest_cache/
+.tox/
+
+# MyPy
+.mypy_cache/
+
+# Large media files (if any slip through)
+*.safetensors
+*.ckpt
+*.pth
+*.bin
+*.onnx
+*.pt
+!assets/exe/*.exe
+
+# Temporary experiment outputs
+experiments/**/outputs/
+experiments/**/results/
+
+# Flutter / Dart (mobile_citadel build artifacts)
+apps/mobile_citadel/build/
+apps/mobile_citadel/.dart_tool/
+apps/mobile_citadel/.flutter-plugins
+apps/mobile_citadel/.flutter-plugins-dependencies
+apps/mobile_citadel/.packages
+apps/mobile_citadel/android/.gradle/
+apps/mobile_citadel/ios/Pods/
+*.apk
+*.aab
+*.ipa
+
+# SCHP tool model weights
+tools/SCHP/exp-schp-*/
+tools/SCHP/mhp_extension/detectron2/build/
+
+# Gemini / AI Assistant artifacts
+.gemini/

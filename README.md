@@ -27,43 +27,9 @@ Neural Citadel introduces an **OS-Level Subprocess Isolation Architecture**. By 
 
 The overarching system is designed to expose the same intelligence core to fundamentally disjointed client environments without code duplication.
 
-```mermaid
-graph TB
-    subgraph Clients ["📱 Presentation Layer"]
-        FLUTTER["Flutter Mobile App<br/><i>(mobile_citadel)</i>"]
-        PYQT["PyQt Desktop GUI<br/><i>(infra/gui)</i>"]
-    end
-
-    subgraph Gateway ["⚡ The ML-Agnostic Gateway Layer"]
-        FASTAPI["FastAPI Proxy Server<br/><i>(13 Route Sub-modules)</i><br/>RAM Footprint: < 50MB"]
-    end
-
-    subgraph Apps ["🧠 Application Layer — Federated Virtual Environments"]
-        direction LR
-        IMG["🎨 Image Gen<br/><i>[image_venv]</i>"]
-        SURG["🔪 Surgeon<br/><i>[enhanced]</i>"]
-        MOV["🎬 Media<br/><i>[movie_venv]</i>"]
-        LLM["🤖 LLMs<br/><i>[coreagentvenv]</i>"]
-        SOC["📲 Socials<br/><i>[social_venv]</i>"]
-        CAP["📸 BLIP-2<br/><i>[CPU Only]</i>"]
-    end
-
-    subgraph Hardware ["🎮 Hardware Mutex Layer"]
-        RM["ResourceManager<br/><i>Asynchronous GPU Lock</i>"]
-        GPU["GTX 1650 (4GB VRAM)<br/><i>Strictly Sequential Access</i>"]
-    end
-
-    FLUTTER -->|HTTP REST / SSE Streams| FASTAPI
-    PYQT -->|Direct OS Subprocess Spawn| Apps
-    FASTAPI -.->|Subprocess Controller| RM
-    RM -->|Execution Serialization| Apps
-    Apps -->|Zero-Leak Memory Mapping| GPU
-
-    style Clients fill:#1a1a2e,stroke:#e94560,color:#fff
-    style Gateway fill:#16213e,stroke:#0f3460,color:#fff
-    style Apps fill:#0f3460,stroke:#533483,color:#fff
-    style Hardware fill:#533483,stroke:#e94560,color:#fff
-```
+<div align="center">
+  <img src="assets/arch_diagram.svg" alt="Dual-Client Bridge Pattern Architecture" width="100%">
+</div>
 
 *   **Desktop Edge Client (PyQt):** Bypasses all network overhead to spawn underlying AI engines directly via native `QProcess` bindings.
 *   **Mobile Client (Flutter):** Connects to the highly optimized FastAPI gateway. The gateway imports *zero* machine learning dependencies (`torch`, `diffusers`), ensuring the host RAM is entirely preserved for the backend inference engines.
@@ -76,32 +42,9 @@ Running over 40 gigabytes of cumulative model weights sequentially across a 4GB 
 
 ### The Subprocess Mutex Mechanism
 
-```mermaid
-sequenceDiagram
-    participant C as Client Request
-    participant G as FastAPI Gateway
-    participant R as ResourceManager (Mutex)
-    participant E1 as LLM Process (Active)
-    participant E2 as Image Process (Cold)
-
-    C->>G: POST /image/generate
-    G->>R: Request GPU Lock (Context: image_gen)
-    
-    rect rgb(200, 50, 50)
-        Note over R,E1: Preemption Phase (Kill-and-Replace)
-        R->>E1: SIGTERM (Graceful exit request)
-        R-->>R: Await 2.0s Timeout
-        R->>E1: SIGKILL (Forced abort, VRAM drops to 0GB)
-    end
-    
-    rect rgb(50, 150, 50)
-        Note over R,E2: Allocation Phase (Zero-Leak Start)
-        R->>E2: Spawns image_venv Python Interpreter
-        E2->>E2: Load PyTorch & Diffusers
-        E2-->>G: Yields Progress Streams (stdout)
-        G-->>C: SSE Progress Updates
-    end
-```
+<div align="center">
+  <img src="assets/seq_diagram.svg" alt="ResourceManager Mutex Flow - VRAM Zero-leak Reclamation" width="100%">
+</div>
 
 ### IPC Protocols: Dual-Mode Execution
 To overcome the 10-30s latency introduced by Python interpreter cold-starts, Neural Citadel establishes two unified IPC (Inter-Process Communication) protocols via standard `stdin/stdout`:

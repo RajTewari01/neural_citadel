@@ -51,6 +51,7 @@ assets/apps_assets/user_history/
 # ============================================================================
 # 4. SECRETS & API KEYS
 # ============================================================================
+google-services.json
 configs/secrets/
 !configs/secrets/socials.env.example
 *.env
@@ -58,6 +59,7 @@ configs/secrets/
 .env
 .env.*
 !*.env.example
+configs/secrets/socials.env
 
 # ============================================================================
 # 5. IMPLEMENTATION PLAN (private project roadmap)

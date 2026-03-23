@@ -157,3 +157,11 @@ tools/SCHP/mhp_extension/detectron2/build/
 
 # Gemini / AI Assistant artifacts
 .gemini/
+
+# ============================================================================
+# 10. ACADEMIC PAPERS / DRAFTS (Local Only)
+# ============================================================================
+neural_citadel_paper*
+implementation_plan*
+walkthrough*
+task*

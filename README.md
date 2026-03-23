@@ -3,11 +3,11 @@
 # 🏰 NEURAL CITADEL
 **Strict Subprocess Isolation for Multi-Model AI Orchestration on Edge Hardware**
 
-[![License](https://img.shields.io/badge/License-Proprietary_-Strictly_No_Use-red?style=for-the-badge)](LICENSE)
-[![Architecture](https://img.shields.io/badge/Architecture-Process_Isolation-8A2BE2?style=for-the-badge)]()
-[![Hardware](https://img.shields.io/badge/Hardware-4GB_GTX_1650-76B900?style=for-the-badge)]()
-[![Gateway](https://img.shields.io/badge/Gateway-FastAPI_Zero_ML_Deps-009688?style=for-the-badge&logo=fastapi&logoColor=white)]()
-[![Clients](https://img.shields.io/badge/Clients-PyQt_%7C_Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)]()
+[![License](https://img.shields.io/badge/License-Proprietary_Strictly_No_Use-red?style=for-the-badge)](LICENSE)
+[![Architecture](https://img.shields.io/badge/Architecture-Process_Isolation-8A2BE2?style=for-the-badge)](#-systems-architecture-overview)
+[![Hardware](https://img.shields.io/badge/Hardware-4GB_GTX_1650-76B900?style=for-the-badge)](#%EF%B8%8F-process-lifecycle--vram-orchestration)
+[![Gateway](https://img.shields.io/badge/Gateway-FastAPI_Zero_ML_Deps-009688?style=for-the-badge&logo=fastapi&logoColor=white)](#1-dual-client-bridge-pattern)
+[![Clients](https://img.shields.io/badge/Clients-PyQt_and_Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](#-mobile-citadel-frontend-architecture)
 
 ---
 

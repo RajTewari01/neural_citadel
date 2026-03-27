@@ -7,11 +7,13 @@
 name: "📝 Documentation Quality"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "**.md"
       - "docs/**"
+      - ".github/workflows/docs.yml"
   pull_request:
     branches: [main]
     paths:

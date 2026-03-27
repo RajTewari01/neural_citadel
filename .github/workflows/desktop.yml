@@ -7,10 +7,12 @@
 name: "🖥️ Desktop Citadel CI"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "infra/gui/**"
+      - ".github/workflows/desktop.yml"
   pull_request:
     branches: [main]
 

@@ -8,10 +8,12 @@
 name: "📱 Mobile Citadel Build"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "apps/mobile_citadel/**"
+      - ".github/workflows/flutter.yml"
   pull_request:
     branches: [main]
     paths:

@@ -8,6 +8,7 @@
 name: "🏰 Gateway CI"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -15,6 +16,7 @@ on:
       - "configs/**"
       - "apps/**/runner.py"
       - "apps/**/engine.py"
+      - ".github/workflows/ci.yml"
   pull_request:
     branches: [main]
 

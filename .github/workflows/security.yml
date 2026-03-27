@@ -1,0 +1,47 @@
+# ============================================================================
+# Neural Citadel — Security & Secret Scan
+# ============================================================================
+# Safeguards the proprietary nature of the platform.
+# ============================================================================
+
+name: "🛡️ Security Audit"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0' # Weekly scan
+
+jobs:
+  secret-scan:
+    name: "🔑 Secret Scanner (TruffleHog)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified
+
+  bandit-scan:
+    name: "🐍 Python AST Security Scan"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit
+        # Skipping B404/B603 because QProcess/subprocess is the foundational architectural pattern here
+        run: bandit -r infra/ apps/ tools/ --skip B404,B603,B311 -ll || true

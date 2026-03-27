@@ -1,0 +1,51 @@
+# ============================================================================
+# Neural Citadel — Mobile Citadel (Flutter) Build Pipeline
+# ============================================================================
+# Validates that the Flutter mobile client compiles successfully.
+# Runs static analysis and debug APK build.
+# ============================================================================
+
+name: "📱 Mobile Citadel Build"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/mobile_citadel/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/mobile_citadel/**"
+
+jobs:
+  build:
+    name: "🔨 Flutter Analyze & Build"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile_citadel
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.24.0"
+          channel: stable
+          cache: true
+
+      - name: Set up Java (for Android SDK)
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Static analysis
+        run: flutter analyze --no-fatal-infos
+
+      - name: Build debug APK
+        run: flutter build apk --debug

@@ -1,0 +1,43 @@
+# ============================================================================
+# Neural Citadel — Desktop Citadel CI
+# ============================================================================
+# Validates the PyQt6 Desktop application codebase.
+# ============================================================================
+
+name: "🖥️ Desktop Citadel CI"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "infra/gui/**"
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-desktop:
+    name: "🔍 PyQt6 Desktop Lint"
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linting tools
+        run: pip install flake8 pyflakes
+
+      - name: Flake8 — Fatal errors only
+        run: flake8 infra/gui/ --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=__pycache__,*.pyc
+
+      - name: Pyflakes — Undefined name detection
+        run: |
+          python -c "
+          import glob, subprocess, sys
+          files = [f for f in glob.glob('infra/gui/**/*.py', recursive=True) if '__pycache__' not in f]
+          if files:
+              result = subprocess.run(['pyflakes'] + files)
+              sys.exit(result.returncode)
+          "

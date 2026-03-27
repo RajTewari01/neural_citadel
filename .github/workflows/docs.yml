@@ -1,0 +1,60 @@
+# ============================================================================
+# Neural Citadel — Documentation Quality Pipeline
+# ============================================================================
+# Ensures all Markdown files pass formatting lint and have no dead links.
+# ============================================================================
+
+name: "📝 Documentation Quality"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.md"
+      - "docs/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**.md"
+      - "docs/**"
+
+jobs:
+  lint:
+    name: "🔍 Markdown Lint"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+
+      - name: Lint Markdown files
+        run: |
+          markdownlint-cli2 "README.md" "docs/**/*.md" \
+            --config '{"default": true, "MD013": false, "MD033": false, "MD041": false, "MD024": false}' \
+            || true  # Non-blocking for initial run
+
+  link-check:
+    name: "🔗 Link Validation"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Check links in README
+        run: |
+          markdown-link-check README.md \
+            --config '{"ignorePatterns": [{"pattern": "^#"}, {"pattern": "^file://"}]}' \
+            || true  # Non-blocking for badge URLs

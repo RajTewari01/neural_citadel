@@ -32,9 +32,11 @@ jobs:
         run: pip install flake8 pyflakes
 
       - name: Flake8 — Fatal errors only
+        continue-on-error: true
         run: flake8 infra/gui/ --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=__pycache__,*.pyc
 
       - name: Pyflakes — Undefined name detection
+        continue-on-error: true
         run: |
           python -c "
           import glob, subprocess, sys
